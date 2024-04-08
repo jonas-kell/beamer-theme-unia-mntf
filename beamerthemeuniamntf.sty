@@ -5,25 +5,73 @@
 % 1. under the LaTeX Project Public License and/or
 % 2. under the GNU Public License.
 
+\usepackage{etoolbox}
+
 \mode<presentation>
 
-\newif\ifbeamer@secheader
-\beamer@secheaderfalse
-
-\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
-\ProcessOptionsBeamer
+% ! extend existing stuff
 
 \usetheme{Boadilla} % uses `block` from Boadilla and takes it as a base to overwrite
 \usecolortheme{uniamntf}
 \usefonttheme{structurebold}
 \useinnertheme{rectangles} % replace with more custom stuff
-\useoutertheme{infolines} % does nothing at them moment. replace with custom stuff
-
+\useoutertheme{infolines}
 \setbeamersize{text margin left=2em,text margin right=2em}
-
-\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
-
 \logo{\includegraphics{slide-background-images/logo-small.png}}
+
+% ! first page
+
+\defbeamertemplate*{title page}{uniamntf theme}{
+    \vspace{1cm}
+    \centering
+    \inserttitle
+    \par
+    \insertsubtitle
+    \par
+    \insertauthor
+    \par
+    \insertdate
+    \par
+}
+\setbeamertemplate{title page}[uniamntf]
+
+% ! title-redefinition
+
+% Define a command to insert a " - " for separation if needed
+\newcount\Level
+\let\Part=\part\def\part{\global\Level=0\Part}
+\let\Chapter=\chapter\def\chapter{\global\Level=1\Chapter}
+\let\Section=\section\def\section{\global\Level=2\Section}
+\let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
+\let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
+\def\subsectionSeparator{
+  \ifcase\the\Level % part
+  \or % chapter
+  \or % section
+  \or- % subsection
+  \or % subsubsection
+  \else  \fi}
+
+% overwrite the frametitle region
+\defbeamertemplate*{frametitle}{uniamntf theme}
+{%
+  \leavevmode%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+%     \usebeamerfont{headline}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot} \hspace*{2ex}
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+%     \usebeamerfont{headline}\usebeamerfont{subsection in head/foot}\hspace*{2ex}\usebeamertemplate{subsection in head/foot}
+%   \end{beamercolorbox}%
+    \usebeamerfont{frametitle}\usebeamerfont{frametitle in head/foot}\insertframetitle
+    \\
+    \usebeamerfont{frametitle}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot}
+    \subsectionSeparator{}
+    \usebeamerfont{frametitle}\usebeamertemplate{subsection in head/foot}\usebeamerfont{subsection in head/foot}
+
+  \vskip0pt%
+}
+\setbeamertemplate{frametitle}[uniamntf]
+\setbeamertemplate{headline}[default]
 
 \mode
 <all>
