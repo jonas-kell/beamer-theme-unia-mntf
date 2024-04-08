@@ -23,3 +23,5 @@ As [per Wikipedia](https://de.wikipedia.org/wiki/Datei:Logo_uni_augsburg.jpg), t
 The background image is taken from the publicly available [Presentation Template](#TODO) (checked on 08.04.2024).
 
 If there are legal problems with the publishing of this content, please feel free to contact me to get this resolved.
+
+<!-- The template seems to have been created by this company https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/ -->
