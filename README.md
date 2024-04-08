@@ -2,7 +2,7 @@
 
 A theme for the [LaTeX](https://www.latex-project.org/) package [beamer](https://github.com/josephwright/beamer) that replicates the look of the Powerpoint-Presentation template published by and for Augsburg University.
 
-The template attempts to provide the basics features that the author needed to properly replicate the look of [This presentation template](#TODO) provided by Augsburg University.
+The template attempts to provide the basics features that the author needed to properly replicate the look of [This presentation template](https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/) used by Augsburg University.
 
 ## Usage
 
@@ -20,8 +20,7 @@ Providing them here in this repository under the GPL license is assumed to be al
 
 As [per Wikipedia](https://de.wikipedia.org/wiki/Datei:Logo_uni_augsburg.jpg), the logos may be distributed under GPL license (checked on 08.04.2024).
 
-The background image is taken from the publicly available [Presentation Template](#TODO) (checked on 08.04.2024).
+The background image is taken from the [Presentation Master Template](https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/) (checked on 08.04.2024).
+These were publicly available for all faculties on the website at some point. However they are hard to find and download links move regularly.
 
 If there are legal problems with the publishing of this content, please feel free to contact me to get this resolved.
-
-<!-- The template seems to have been created by this company https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/ -->
