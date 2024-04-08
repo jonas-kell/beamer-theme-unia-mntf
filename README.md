@@ -24,4 +24,4 @@ The background image is taken from the publicly available [Presentation Template
 
 If there are legal problems with the publishing of this content, please feel free to contact me to get this resolved.
 
-<!-- The template seems to have been created by this company https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/ -->
+<!-- The template seems to have been created by this company https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/  -->
