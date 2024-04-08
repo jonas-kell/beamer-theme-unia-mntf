@@ -52,6 +52,5 @@
             "args": ["%DOCFILE%"],
             "env": {}
         }
-    ],
-    "cSpell.words": []
+    ]
 }
