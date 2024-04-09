@@ -6,7 +6,7 @@
 % 2. under the GNU Public License.
 
 \usepackage{graphicx}
-\usepackage[absolute]{textpos}
+\usepackage{tikz}
 
 \mode<presentation>
 
@@ -17,14 +17,14 @@
 \usefonttheme{structurebold}
 \useinnertheme{rectangles} % replace with more custom stuff
 \useoutertheme{infolines}
-\setbeamersize{text margin left=2em,text margin right=0em}
+\setbeamersize{text margin left=4em,text margin right=0em}
 \logo{\includegraphics{slide-background-images/logo-small.png}}
 
 
 
 % ! first page
 \defbeamertemplate*{title page}{uniamntf theme}{
-  \hspace*{-4em}\hspace*{.50\paperwidth}\vspace*{-200em}%
+  \hspace*{-6em}\hspace*{.50\paperwidth}\vspace*{-200em}%
   \pgfsetfillopacity{0.90}
   \begin{beamercolorbox}[wd=.47\paperwidth,sep=1.8em,ht=.85\paperheight,left]{section in head/foot}%
       \includegraphics[width=0.4\paperwidth]{slide-background-images/logo-mntf-full}\\
@@ -67,18 +67,17 @@
 % overwrite the frametitle region
 \defbeamertemplate*{frametitle}{uniamntf theme}
 {%
-  \leavevmode%
-%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
-%     \usebeamerfont{headline}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot} \hspace*{2ex}
-%   \end{beamercolorbox}%
-%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
-%     \usebeamerfont{headline}\usebeamerfont{subsection in head/foot}\hspace*{2ex}\usebeamertemplate{subsection in head/foot}
-%   \end{beamercolorbox}%
-    \usebeamerfont{frametitle}\usebeamerfont{frametitle in head/foot}\insertframetitle
-    \\
-    \usebeamerfont{frametitle}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot}
+  \vspace*{0.7em}%
+  \begin{tikzpicture}[remember picture,overlay]%
+    \fill[structure] (current page.north west) -- ++(0,0) -- ++(0,-0.45\paperheight) -- ++(0.5,0.02\paperheight) -- ++(0,0.43\paperheight) -- cycle;%
+  \end{tikzpicture}%
+  {\usebeamercolor*{black}\usebeamerfont{frametitle}\usebeamerfont{frametitle in head/foot}\insertframetitle}
+  \\
+  {\normalsize\vspace*{-0.8em}\begin{beamercolorbox}[wd=.905\paperwidth,sep=0ex,ht=.1ex,left]{separator}\end{beamercolorbox}\vspace*{-0.4em}%
+    \usebeamerfont{section}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot}
     \subsectionSeparator{}
-    \usebeamerfont{frametitle}\usebeamertemplate{subsection in head/foot}\usebeamerfont{subsection in head/foot}
+    \usebeamerfont{subsection}\usebeamertemplate{subsection in head/foot}\usebeamerfont{subsection in head/foot}}
+    
 
   \vskip0pt%
 }
