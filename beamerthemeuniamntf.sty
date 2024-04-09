@@ -8,12 +8,18 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 
+\newif\ifbeamer@fai
+\beamer@faifalse
+
+\DeclareOptionBeamer{fai}{\beamer@faitrue}
+\ProcessOptionsBeamer
+
 \mode<presentation>
 
 % ! extend existing stuff
 
 \usetheme{Boadilla} % uses `block` from Boadilla and takes it as a base to overwrite
-\usecolortheme{uniamntf}
+\ifbeamer@fai\usecolortheme[fai]{uniamntf}\else\usecolortheme{uniamntf}\fi
 \usefonttheme{structurebold}
 \useinnertheme{rectangles} % replace with more custom stuff
 \useoutertheme{infolines}
@@ -77,12 +83,18 @@
     \usebeamerfont{section}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot}
     \subsectionSeparator{}
     \usebeamerfont{subsection}\usebeamertemplate{subsection in head/foot}\usebeamerfont{subsection in head/foot}}
-    
-
   \vskip0pt%
 }
 \setbeamertemplate{frametitle}[uniamntf]
 \setbeamertemplate{headline}[default]
+
+% \setbeamertemplate{footline}{%
+%         \if\insertframenumber\inserttotalframenumber
+%             last frame
+%         \else
+%             footline of normal slides
+%         \fi
+% }
 
 \mode
 <all>

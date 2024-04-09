@@ -5,6 +5,12 @@
 % 1. under the LaTeX Project Public License and/or
 % 2. under the GNU Public License.
 
+\newif\ifbeamer@fai
+\beamer@faifalse
+
+\DeclareOptionBeamer{fai}{\beamer@faitrue}
+\ProcessOptionsBeamer
+
 \mode<presentation>
 
 % 0/255,    101/255,    97/255
@@ -13,10 +19,10 @@
 % 72/255,    147/255,    36/255
 \definecolor{beamer@uniafaigreen}{rgb}{0.28235294117,0.57647058823,0.14117647058}
 
+\ifbeamer@fai\setbeamercolor*{structure}{fg=beamer@uniafaigreen}\else\setbeamercolor*{structure}{fg=beamer@uniamntfgreen}\fi
+
 \definecolor{beamer@seperatorgrey}{rgb}{0.34,0.34,0.34}
 \setbeamercolor*{separator}{bg=beamer@seperatorgrey}
-
-\setbeamercolor*{structure}{fg=beamer@uniamntfgreen}
 
 \setbeamercolor*{palette primary}{use=structure,fg=black,bg=structure.fg!40!white}
 \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!60!white}
