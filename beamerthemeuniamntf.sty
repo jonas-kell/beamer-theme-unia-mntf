@@ -10,8 +10,12 @@
 
 \newif\ifbeamer@fai
 \beamer@faifalse
-
 \DeclareOptionBeamer{fai}{\beamer@faitrue}
+
+\newif\ifbeamer@neutralbackground
+\beamer@neutralbackgroundfalse
+\DeclareOptionBeamer{neutralbackground}{\beamer@neutralbackgroundtrue}
+
 \ProcessOptionsBeamer
 
 \mode<presentation>
@@ -53,6 +57,24 @@
 }
 \setbeamertemplate{title page}[uniamntf]
 
+\defbeamertemplate*{background canvas}{uniamntf theme}{
+  \if\insertframenumber1
+      % first frame
+      \ifbeamer@neutralbackground
+        \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide.png}
+      \else
+        \ifbeamer@fai
+          \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide-fai.png}
+        \else
+          \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide-mntf.png}
+        \fi
+      \fi
+  \else
+      % other frames
+  \fi
+}
+\setbeamertemplate{background canvas}[uniamntf]
+
 % ! title-redefinition
 
 % Define a command to insert a " - " for separation if needed
@@ -87,14 +109,6 @@
 }
 \setbeamertemplate{frametitle}[uniamntf]
 \setbeamertemplate{headline}[default]
-
-% \setbeamertemplate{footline}{%
-%         \if\insertframenumber\inserttotalframenumber
-%             last frame
-%         \else
-%             footline of normal slides
-%         \fi
-% }
 
 \mode
 <all>

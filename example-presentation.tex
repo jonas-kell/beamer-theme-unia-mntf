@@ -1,7 +1,8 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{uniamntf}
-% \usetheme[fai]{uniamntf} % fai-color
+% \usetheme[fai]{uniamntf} % fai-theme
+% \usetheme[neutralbackground,fai]{uniamntf} % alternative first slide
 
 \title[small title]{The full Title}
 \subtitle{subtitle}
@@ -14,15 +15,9 @@
 
 \begin{document}
 
-{
-    % can be adapted to e.g. fai or mntf background
-    \usebackgroundtemplate{
-        \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide.png}
-    }
-    \begin{frame}[t,plain]
-        \maketitle
-    \end{frame}
-}
+\begin{frame}[t,plain]
+    \maketitle
+\end{frame}
 
 \begin{frame}
     \frametitle{Outline}
@@ -93,5 +88,17 @@
 \begin{frame}{ASD 2}
 \end{frame}
 
+
+\section{Summary}
+
+{
+    % ! if you want to backdrop any slide with a picture, this is how you do it
+    % \usebackgroundtemplate{
+    %     \includegraphics[width=\paperwidth,height=\paperheight]{TODO}
+    % }
+    \begin{frame}{Acknowledgment}
+
+    \end{frame}
+}
 
 \end{document}
