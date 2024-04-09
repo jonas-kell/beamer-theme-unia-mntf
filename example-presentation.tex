@@ -13,6 +13,12 @@
 
 \date[01.05.2024]{$1^{\text{st}}$ of Mai 2024}
 
+\acknowledgement{
+    John Doe\\
+    Augsburg University\\
+    john.doe@uni-augsburg.de\\
+    www.uni-augsburg.de
+}
 
 \begin{document}
 
@@ -106,9 +112,12 @@
 
 \section{Summary}
 
-\begin{frame}{Acknowledgment}
-    
-\end{frame}
+{
+    \setbeamertemplate{frametitle}[uniamntfack] % use the acknowledgment-style for this slide
+    \begin{frame}[plain]{Acknowledgment}
+        Thank you for your kind attention
+    \end{frame}
+}
 
 \section*{Extra slides} % section* not included in toc/outline
 \begin{frame}{Some extra slide}

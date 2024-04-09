@@ -9,6 +9,7 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
+\usetikzlibrary{calc}
 
 \newif\ifbeamer@fai
 \beamer@faifalse
@@ -19,6 +20,15 @@
 \DeclareOptionBeamer{neutralbackground}{\beamer@neutralbackgroundtrue}
 
 \ProcessOptionsBeamer
+
+
+% ! new command
+\mode<presentation>
+\def\acknowledgement{\@dblarg\beamer@acknowledgement}
+\long\def\beamer@acknowledgement[#1]#2{%
+  \def\insertacknowledgement{#2}%
+}
+\acknowledgement{}
 
 \mode<presentation>
 
@@ -162,6 +172,29 @@
 }
 \setbeamertemplate{sections/subsections in toc}[uniamntf]
 
+
+% ! Acknowledgement slide
+\defbeamertemplate{frametitle}{uniamntfack}
+{% 
+  \leavevmode%
+  \small
+  \pgftext{%
+    \usebeamerfont*{normal text}%
+    \usebeamercolor*{normal text}%
+    \color{fg}
+    \begin{tikzpicture}[remember picture,overlay]%
+      \fill[structure] (current page.north west) ++(.5\paperwidth,0) -- ++(0,-0.60\paperheight) -- ++(0.3\paperwidth,0) -- ++(0.5,0.3) -- ++(0,0.6\paperheight) -- cycle;%
+
+      \node at ($(current page.north west) + (0.67\paperwidth,-0.15\paperheight)$) {
+        \ifbeamer@fai\includegraphics[width=0.25\paperwidth]{slide-background-images/logo-fai-full}\else\includegraphics[width=0.25\paperwidth]{slide-background-images/logo-mntf-full}\fi
+      };
+
+      \node[align=left, below right] (multiline) at ($(current page.north west) + (0.52\paperwidth,-0.62\paperheight)$) {
+          \insertacknowledgement{}
+      };
+    \end{tikzpicture}%
+  }
+}
 
 \mode
 <all>
