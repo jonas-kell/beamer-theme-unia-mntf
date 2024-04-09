@@ -1,4 +1,5 @@
 \documentclass[aspectratio=169]{beamer}
+% \documentclass[aspectratio=43]{beamer} % alternative aspect-ratio should re-scale
 
 \usetheme{uniamntf}
 % \usetheme[fai]{uniamntf} % fai-theme
@@ -15,23 +16,24 @@
 
 \begin{document}
 
-\begin{frame}[t,plain]
+% first frames requires exactly these settings and options
+\begin{frame}[t,plain] 
     \maketitle
 \end{frame}
 
 \begin{frame}
     \frametitle{Outline}
-
     \tableofcontents
-
 \end{frame}
 
 \section{Testsection 1}
 
-\begin{frame}
+\begin{frame}[t]
     \frametitle{Random Text}
 
-    Hello\pause
+    because of the [t] option, text starts at the top. Default is centered
+
+    Hello\pause % this causes delayed animations on render
     
     This is Text
 \end{frame}
@@ -81,23 +83,30 @@
 
 \section{Testsection 3}
 \subsection{sub-1}
-\begin{frame}{ASD 1}
+\begin{frame}[t]{ASD 1}
+    Section and subsection titles are properly displayed int the headline-underline
 \end{frame}
 
 \subsection{sub-2}
 \begin{frame}{ASD 2}
 \end{frame}
 
-
 \section{Summary}
 
+\begin{frame}{Acknowledgment}
+    
+\end{frame}
+
+\section*{Extra slides} % section* not included in toc/outline
+\begin{frame}{Some extra slide}
+\end{frame}
 {
     % ! if you want to backdrop any slide with a picture, this is how you do it
     % \usebackgroundtemplate{
     %     \includegraphics[width=\paperwidth,height=\paperheight]{TODO}
     % }
-    \begin{frame}{Acknowledgment}
-
+    \begin{frame}{Some other extra slide}
+        asdasd
     \end{frame}
 }
 
