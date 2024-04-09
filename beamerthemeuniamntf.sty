@@ -26,11 +26,8 @@
 \ifbeamer@fai\usecolortheme[fai]{uniamntf}\else\usecolortheme{uniamntf}\fi
 \usefonttheme{structurebold}
 \useinnertheme{rectangles} % replace with more custom stuff
-\useoutertheme{infolines}
 \setbeamersize{text margin left=4em,text margin right=0em}
 \logo{\includegraphics{slide-background-images/logo-small.png}}
-
-
 
 % ! first page
 \defbeamertemplate*{title page}{uniamntf theme}{
@@ -74,6 +71,32 @@
   \fi
 }
 \setbeamertemplate{background canvas}[uniamntf]
+
+% one block taken from infolines theme and modified --> https://github.com/josephwright/beamer/blob/main/base/themes/outer/beamerouterthemeinfolines.sty
+\defbeamertemplate*{footline}{uniamntf theme}{
+  \if\insertframenumber1%
+  \else%
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,rightskip=2ex,sep=0pt]{date in head/foot}%
+      \hfill%
+      \usebeamerfont{date in head/foot}%
+      \insertshortdate{}%
+      \hfill%
+      \usebeamercolor[fg]{page number in head/foot}%
+      \usebeamerfont{page number in head/foot}%
+      \usebeamertemplate{page number in head/foot}%
+    \end{beamercolorbox}}%
+    \vskip0pt%
+  \fi%
+}
+\setbeamertemplate{footline}[infolines]
 
 % ! title-redefinition
 
