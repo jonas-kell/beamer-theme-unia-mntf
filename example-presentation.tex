@@ -21,12 +21,13 @@
     \maketitle
 \end{frame}
 
+% how to do a multi-col toc https://tex.stackexchange.com/a/27256
 \begin{frame}
     \frametitle{Outline}
     \tableofcontents
 \end{frame}
 
-\section{Testsection 1}
+\section{Testsection}
 
 \begin{frame}[t]
     \frametitle{Random Text}
@@ -35,7 +36,7 @@
 
     Hello\pause % this causes delayed animations on render
     
-    This is Text
+    This is Text with a delayed show animation
 \end{frame}
 
 \begin{frame}
@@ -54,7 +55,7 @@
     \end{alertblock}
 \end{frame}
 
-\section{Testsection 2}
+\section{Testsection Hello}
 
 \begin{frame}{Title-Here}
     \begin{columns}
@@ -78,10 +79,22 @@
             This text will be in the second column
             and on a second thoughts, this is a nice looking
             layout in some cases.
+            \begin{enumerate}
+                \item test
+                \item test test
+                \begin{enumerate}
+                    \item test test test
+                    \item test test test
+                    \begin{enumerate}
+                        \item test test test
+                        \item test
+                    \end{enumerate}
+                \end{enumerate}
+            \end{enumerate}
     \end{columns}
 \end{frame}
 
-\section{Testsection 3}
+\section{Testsection Test}
 \subsection{sub-1}
 \begin{frame}[t]{ASD 1}
     Section and subsection titles are properly displayed int the headline-underline
@@ -106,7 +119,7 @@
     %     \includegraphics[width=\paperwidth,height=\paperheight]{TODO}
     % }
     \begin{frame}{Some other extra slide}
-        asdasd
+        asd asd
     \end{frame}
 }
 

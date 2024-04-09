@@ -7,6 +7,8 @@
 
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
 
 \newif\ifbeamer@fai
 \beamer@faifalse
@@ -132,6 +134,34 @@
 }
 \setbeamertemplate{frametitle}[uniamntf]
 \setbeamertemplate{headline}[default]
+
+% ! items and toc
+% item blocks can be taken from base theme and modified --> https://github.com/josephwright/beamer/blob/main/base/beamerbaseauxtemplates.sty#L423 and other lines
+
+% \defbeamertemplate*{enumerate item}{uniamntf}
+% {
+%   %....
+% }
+% \setbeamertemplate{items}[uniamntf]
+
+% toc-square items from --> https://github.com/josephwright/beamer/blob/main/base/beamerbaseauxtemplates.sty#L258 and modified
+
+\newcommand{\colorednumber}[2]{\textcolor{#1}{\hbox{\textcolor{structure}{#2}}}}
+
+\defbeamertemplate*{section in toc}{uniamntf}{%
+  \leavevmode%
+  \leftskip=3.5ex%
+  \llap{%
+    \begin{tcolorbox}[colback=white, colframe=structure, boxrule=0.2ex, boxsep=1ex, left=0ex, right=0ex, top=0ex, bottom=0ex, sharp corners, width=3.7ex]
+      % Insert the colored number inside the box
+      \colorednumber{red}{\inserttocsectionnumber}
+    \end{tcolorbox}%
+  }%
+  \hspace*{1.4ex}{\raisebox{1.3ex}{\inserttocsection}}
+  \par
+}
+\setbeamertemplate{sections/subsections in toc}[uniamntf]
+
 
 \mode
 <all>
