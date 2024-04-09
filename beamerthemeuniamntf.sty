@@ -5,7 +5,8 @@
 % 1. under the LaTeX Project Public License and/or
 % 2. under the GNU Public License.
 
-\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage[absolute]{textpos}
 
 \mode<presentation>
 
@@ -16,22 +17,33 @@
 \usefonttheme{structurebold}
 \useinnertheme{rectangles} % replace with more custom stuff
 \useoutertheme{infolines}
-\setbeamersize{text margin left=2em,text margin right=2em}
+\setbeamersize{text margin left=2em,text margin right=0em}
 \logo{\includegraphics{slide-background-images/logo-small.png}}
 
-% ! first page
 
+
+% ! first page
 \defbeamertemplate*{title page}{uniamntf theme}{
-    \vspace{1cm}
-    \centering
-    \inserttitle
-    \par
-    \insertsubtitle
-    \par
-    \insertauthor
-    \par
-    \insertdate
-    \par
+  \hspace*{-4em}\hspace*{.50\paperwidth}\vspace*{-200em}%
+  \pgfsetfillopacity{0.90}
+  \begin{beamercolorbox}[wd=.47\paperwidth,sep=1.8em,ht=.85\paperheight,left]{section in head/foot}%
+      \includegraphics[width=0.4\paperwidth]{slide-background-images/logo-mntf-full}\\
+      \makebox{}{}\\
+      \makebox{}{}\\
+      \makebox{}{}\\
+      \usebeamerfont{title}\inserttitle\\
+      \usebeamerfont{subtitle}\insertsubtitle\\
+      \makebox{}{}\\
+      \usebeamerfont{author}\insertauthor\\
+      \usebeamerfont{institute}\insertinstitute\\
+      \makebox{}{}\\
+      \makebox{}{}\\
+      \usebeamerfont{date}\insertdate
+      \makebox{}{}\\
+      \makebox{}{}\\
+      \makebox{}{}\\
+  \end{beamercolorbox}%
+  \pgfsetfillopacity{1}
 }
 \setbeamertemplate{title page}[uniamntf]
 

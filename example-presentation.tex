@@ -13,9 +13,15 @@
 
 \begin{document}
 
-\begin{frame}[plain]
-    \maketitle
-\end{frame}
+{
+    % can be adapted to e.g. fai or mntf background
+    \usebackgroundtemplate{
+        \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide.png}%
+    }
+    \begin{frame}[t,plain]
+        \maketitle
+    \end{frame}
+}
 
 \begin{frame}
     \frametitle{Outline}
