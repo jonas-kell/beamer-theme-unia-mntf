@@ -67,7 +67,7 @@
 \setbeamertemplate{title page}[uniamntf]
 
 \defbeamertemplate*{background canvas}{uniamntf theme}{
-  \if\insertframenumber1
+  \ifnum\insertframenumber=1
       % first frame
       \ifbeamer@neutralbackground
         \includegraphics[width=\paperwidth,height=\paperheight]{slide-background-images/background-title-slide.png}
@@ -86,7 +86,7 @@
 
 % one block taken from infolines theme and modified --> https://github.com/josephwright/beamer/blob/main/base/themes/outer/beamerouterthemeinfolines.sty
 \defbeamertemplate*{footline}{uniamntf theme}{
-  \if\insertframenumber1%
+  \ifnum\insertframenumber=1%
   \else%
     \leavevmode%
     \hbox{%
