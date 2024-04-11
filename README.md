@@ -4,6 +4,23 @@ A theme for the [LaTeX](https://www.latex-project.org/) package [beamer](https:/
 
 The template attempts to provide the basics features that the author needed to properly replicate the look of [This presentation template](https://v2-powerpoint.de/portfolio-item/universitaet-augsburg/) used by Augsburg University.
 
+<table>
+<tr>
+<td>
+
+### MNTF-Theme
+
+<img src="./rendered-preview-pictures/MNTFCompilation.png" alt="MNTF-Theme"/>
+</td>
+<td>
+
+### FAI-Theme
+
+<img src="./rendered-preview-pictures/FAICompilation.png" alt="FAI-Theme"/>
+</td>
+</tr>
+</table>
+
 ## Usage
 
 Replicate the `example-presentation.tex` and adapt to your needs.
